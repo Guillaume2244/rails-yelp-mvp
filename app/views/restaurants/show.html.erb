@@ -1,3 +1,5 @@
+ <div class="text-center list_">
+
  <h3> <%= @restaurant.name %> </h3>
  <p><%= @restaurant.address%></p>
  <p><%= @restaurant.phone_number%></p>
@@ -9,9 +11,16 @@
 <h4>Qu'en pensent les internautes ??</h4>
 
 <ul>
-  <% @restaurants.reviews.each do |review| %>
-  <li> review.content </li>
-  <p> review.stars </p>
+  <% @restaurant.reviews.each do |review| %>
+  <li> <%= review.content %> </li>
+  <p> <%= review.rating %> stars</p>
+
   <% end %>
 
 </ul>
+
+<%= link_to "revenir aux restaurants", restaurants_path, class: "btn btn-primary" %>
+<br>
+ <%= link_to "add a comment", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+
+</div>

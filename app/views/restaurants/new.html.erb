@@ -1,0 +1,29 @@
+
+
+<body>
+
+<div class="title text-center">
+  <h1>Ajoutez un restaurant </h1>
+</div>
+
+
+<div class="col-xs-12 col-md-offset-4 padded">
+  <div class="formulaire">
+   <div class="col-xs-12 text-center">
+    <%= form_for @restaurant do |f| %>
+    <%= f.text_field :name, placeholder: "Restaurant's name" %>
+    <hr>
+    <%= f.text_field :address, placeholder: "Restaurant's address" %>
+    <hr>
+    <%= f.text_field :phone_number, placeholder: "Restaurant's phone number" %>
+    <hr>
+    <%= f.text_field :category, placeholder: "Restaurant's category" %>
+    <hr>
+    <%= f.submit 'Add a restaurant', :class => 'btn-treehouse' %>
+    <% end %>
+    </div>
+  </div>
+
+</div>
+
+</body>

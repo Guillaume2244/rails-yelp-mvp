@@ -1,10 +1,43 @@
-<h1>All the restaurants : </h1>
+<body>
 
-<ul>
-  <% @restaurants.each do |r| %>
-    <li><%= r.name %></li>
-    <p><%= r.category%></p>
-    <%= link_to "Voir", restaurant_path(r) %>
-    <hr>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url( <%= image_url 'background.jpg' %>);">
+  <div class="banner-content">
+    <h1>Find the bests restaurants</h1>
+    <%= link_to "Ajouter un restaurant", new_restaurant_path, class: "btn btn-treehouse"%>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |r| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-description">
+          <h2><%= r.name %></h2>
+          <p><%= r.category%></p>
+          <%= link_to "Voir", restaurant_path(r), class: "btn btn-medium" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div class="share-links">
+  <a href="#" class="share-link bg-facebook">
+    <i class="fa fa-facebook"></i>
+  </a>
+  <a href="#" class="share-link bg-twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  <a href="#" class="share-link bg-email">
+    <i class="fa fa-envelope-o"></i>
+  </a>
+  <a href="#" class="share-link bg-text">
+    <i class="fa fa-mobile"></i>
+  </a>
+</div>
+
+</body>
