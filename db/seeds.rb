@@ -28,3 +28,5 @@ restaurants_attributes = [
     category:      "italian"
   }
 ]
+
+restaurants_attributes.each { |params| Restaurant.create!(params) }
